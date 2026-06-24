@@ -1,9 +1,9 @@
-1. Temat aplikacji
+1. Temat aplikacji /n
 Aplikacja ukazuje prosty system zarządzania magazynem. Magazyn przechowuje różne rodzaje produktów (spożywcze, elektroniczne i chemiczne), z których każdy ma własny identyfikator (SKU), cenę oraz aktualny stan ilościowy.
 Towar trafia do magazynu poprzez dostawy od dostawców, każda dostawa składa się z pozycji wskazujących konkretny produkt, jego ilość i cenę zakupu. Magazyn pozwala przyjmować dostawy, wydawać towar, wskazywać produkty z krótką datą ważności oraz wyceniać cały stan magazynowy różnymi metodami.
 Pilnowana jest poprawności danych: nie można wydać więcej niż jest na stanie ani ustawić ujemnej ceny.
 
-2. Lista klas
+3. Lista klas
 Adres - Obiekt wartości opisujący lokalizację (ulica, miasto, kod pocztowy)
 Produkt - Abstrakcyjna - Wspólny kontrakt każdego towaru (SKU, nazwa, cena, stan oraz reguły przyjęcia i wydania)
 ProduktSpozywczy - Produkt z datą ważności, przechowuje informacje o terminie ważności oraz warunki przechowywania
@@ -17,7 +17,7 @@ WycenaWgKosztu - Pierwsza strategia liczenia wartości magazynu według kosztu (
 WycenaDetaliczna - Druga strategia liczenia według potencjalnej sprzedaży (stan x cena x marża)
 Magazyn - Główny obiekt
 
-3. Opis relacji między klasami
+4. Opis relacji między klasami
 Magazyn - Adres -> Kompozycja
 Dostawca - Adres -> Kompozycja
 Magazyn - Produkt -> Kolekcja (1:n)
@@ -29,7 +29,7 @@ IMetodaWyceny - WycenaWgKosztu/WycenaDetaliczna -> Interfejs
 Magazyn - IMetodaWyceny -> Parametr metody
 Magazyn - Dostawa -> Parametr metody
 
-4. Wskazanie czterech zasad OOP
+5. Wskazanie czterech zasad OOP
 Enkapsulacja -> W klasie Produkt, pola _cena_netto lub _stan
 Zmiana stanu tylko przez Przyjmij()/Wydaj(), które pilnują reguł.
 Dla ceny, wartości ujemne są odrzucane, nie da się ustawić tego stanu z zewnątrz.
